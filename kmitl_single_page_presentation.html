@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (สจล.) - KMITL</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kmitl: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                            primary: '#ff6b00',
+                            dark: '#1e1b18'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Kanit', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #0f0e0d;
+            color: #f3f4f6;
+        }
+        .orange-gradient-text {
+            background: linear-gradient(135deg, #ff9d42 0%, #ff6b00 50%, #e65100 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .orange-card-glow {
+            box-shadow: 0 10px 30px -10px #f1f0f0fa;
+        }
+        .orange-card-glow:hover {
+            box-shadow: 0 15px 35px -5px rgba(255, 107, 0, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f0;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff6b00;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-[#0f0e0d] text-gray-100 antialiased custom-scrollbar">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0f0e0d]/90 backdrop-blur-md border-b border-orange-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-orange-600 to-amber-400 flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-orange-500/30">
+                        <i class="fa-solid font-bold">K</i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-wider text-white">สจล. <span class="text-orange-500">| KMITL</span></span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#history" class="text-gray-300 hover:text-orange-400 transition-colors">ประวัติ</a>
+                    <a href="#color" class="text-gray-300 hover:text-orange-400 transition-colors">สีประจำสถาบัน</a>
+                    <a href="#philosophy" class="text-gray-300 hover:text-orange-400 transition-colors">ปรัชญา & FIGHT</a>
+                    <a href="#faculties" class="text-gray-300 hover:text-orange-400 transition-colors">คณะ/วิทยาลัย</a>
+                    <a href="#transport" class="text-gray-300 hover:text-orange-400 transition-colors">การเดินทาง</a>
+                    <a href="#team" class="text-gray-300 hover:text-orange-400 transition-colors">คณะผู้จัดทำ</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#181614] border-b border-orange-500/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#history" class="mobile-link block text-gray-300 hover:text-orange-400 py-1">ประวัติ</a>
+            <a href="#color" class="mobile-link block text-gray-300 hover:text-orange-400 py-1">สีประจำสถาบัน</a>
+            <a href="#philosophy" class="mobile-link block text-gray-300 hover:text-orange-400 py-1">ปรัชญา & FIGHT</a>
+            <a href="#faculties" class="mobile-link block text-gray-300 hover:text-orange-400 py-1">คณะ/วิทยาลัย</a>
+            <a href="#transport" class="mobile-link block text-gray-300 hover:text-orange-400 py-1">การเดินทาง</a>
+            <a href="#team" class="mobile-link block text-gray-300 hover:text-orange-400 py-1">คณะผู้จัดทำ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden border-b border-orange-500/10">
+        <!-- Glowing background blobs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-10 right-10 w-72 h-72 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-semibold mb-6">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>สถาบันอุดมศึกษาชั้นนำด้านวิจัยและเทคโนโลยี</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง <br class="hidden sm:block">
+                <span class="orange-gradient-text">(สจล.) (KMITL)</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-300 font-light leading-relaxed mb-10">
+                สถาบันการศึกษาและวิจัยชั้นนำด้านวิทยาศาสตร์ นวัตกรรม และเทคโนโลยี มุ่งมั่นสร้างสรรค์องค์ความรู้เพื่อการพัฒนาประเทศอย่างยั่งยืน
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#history" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 text-white font-semibold shadow-lg shadow-orange-600/30 hover:scale-105 transition-all duration-300 flex items-center space-x-2">
+                    <span>สำรวจประวัติมหาวิทยาลัย</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+                <a href="#faculties" class="px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold hover:border-orange-500/40 transition-all duration-300">
+                    ดูคณะและวิทยาลัยทั้งหมด
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- History Section -->
+    <section id="history" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-orange-500 tracking-widest uppercase mb-2">HISTORY & MILESTONES</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">ประวัติความเป็นมา สจล.</h3>
+                <p class="text-gray-400 mt-3 max-w-2xl mx-auto">จุดเริ่มต้นจากศูนย์ฝึกโทรคมนาคม สู่วิทยาลัย และมหาวิทยาลัยชั้นนำระดับประเทศ</p>
+            </div>
+
+            <!-- Main Intro Card -->
+            <div class="mb-12 bg-gradient-to-r from-orange-950/40 via-neutral-900 to-neutral-900 border border-orange-500/20 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 shadow-xl">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-orange-600/20 border border-orange-500/40 flex-shrink-0 flex items-center justify-center text-orange-400 text-3xl">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-2">ก่อตั้งเมื่อวันที่ 24 สิงหาคม พ.ศ. 2503</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (สจล.) เริ่มก่อตั้งจากความร่วมมือระหว่าง <span class="text-orange-400 font-semibold">รัฐบาลไทย และ รัฐบาลญี่ปุ่น</span> เพื่อเสริมสร้างการศึกษาด้านเทคโนโลยีและโทรคมนาคมในประเทศไทย
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-orange-500/30 ml-4 sm:ml-32 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#0f0e0d] group-hover:scale-125 transition-transform"></div>
+                    <span class="sm:absolute sm:-left-32 sm:top-0 text-orange-400 font-bold text-lg mb-1 block">พ.ศ. 2503</span>
+                    <div class="bg-neutral-900/80 border border-neutral-800 hover:border-orange-500/40 rounded-xl p-5 transition-all duration-300">
+                        <h4 class="text-lg font-bold text-white mb-1">ศูนย์ฝึกโทรคมนาคมนนทบุรี</h4>
+                        <p class="text-gray-400 text-sm">สังกัดกระทรวงศึกษาธิการ ต่อมาได้ได้รับการยกฐานะเป็น <span class="text-gray-200">"วิทยาลัยโทรคมนาคมนนทบุรี"</span> ในปี พ.ศ. 2507</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#0f0e0d] group-hover:scale-125 transition-transform"></div>
+                    <span class="sm:absolute sm:-left-32 sm:top-0 text-orange-400 font-bold text-lg mb-1 block">พ.ศ. 2514</span>
+                    <div class="bg-neutral-900/80 border border-neutral-800 hover:border-orange-500/40 rounded-xl p-5 transition-all duration-300">
+                        <h4 class="text-lg font-bold text-white mb-1">รวม 3 วิทยาลัยเทคนิค</h4>
+                        <p class="text-gray-400 text-sm">รวมวิทยาลัยเทคนิคพระนครเหนือ วิทยาลัยโทรคมนาคมนนทบุรี และวิทยาลัยเทคนิคธนบุรี เข้าเป็น <span class="text-gray-200">“สถาบันเทคโนโลยีพระจอมเกล้า”</span> พร้อมย้ายศูนย์นนทบุรีมาตั้ง ณ เขตลาดกระบัง</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#0f0e0d] group-hover:scale-125 transition-transform"></div>
+                    <span class="sm:absolute sm:-left-32 sm:top-0 text-orange-400 font-bold text-lg mb-1 block">พ.ศ. 2522</span>
+                    <div class="bg-neutral-900/80 border border-neutral-800 hover:border-orange-500/40 rounded-xl p-5 transition-all duration-300">
+                        <h4 class="text-lg font-bold text-white mb-1">วิทยาเขตเจ้าคุณทหารลาดกระบัง</h4>
+                        <p class="text-gray-400 text-sm">รับโอนวิทยาลัยเกษตรกรรมเจ้าคุณทหาร และเปลี่ยนชื่อเป็นวิทยาเขตเจ้าคุณทหารลาดกระบัง เพื่อเป็นอนุสรณ์แด่ <span class="text-orange-300">เจ้าพระยาสุรวงษ์ไวยวัฒน์ (วร บุนนาค)</span> ผู้มอบที่ดินให้ก่อตั้งมหาวิทยาลัย</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#0f0e0d] group-hover:scale-125 transition-transform"></div>
+                    <span class="sm:absolute sm:-left-32 sm:top-0 text-orange-400 font-bold text-lg mb-1 block">พ.ศ. 2529</span>
+                    <div class="bg-neutral-900/80 border border-neutral-800 hover:border-orange-500/40 rounded-xl p-5 transition-all duration-300">
+                        <h4 class="text-lg font-bold text-white mb-1">สถาบันอิสระ (สจล.)</h4>
+                        <p class="text-gray-400 text-sm">แยกเป็นสถาบันอิสระ ใช้ชื่อเต็มอย่างเป็นทางการว่า <span class="text-gray-200">"สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง" (สจล.)</span></p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-4 border-[#0f0e0d] group-hover:scale-125 transition-transform"></div>
+                    <span class="sm:absolute sm:-left-32 sm:top-0 text-orange-400 font-bold text-lg mb-1 block">พ.ศ. 2551</span>
+                    <div class="bg-neutral-900/80 border border-neutral-800 hover:border-orange-500/40 rounded-xl p-5 transition-all duration-300">
+                        <h4 class="text-lg font-bold text-white mb-1">มหาวิทยาลัยในกำกับของรัฐ</h4>
+                        <p class="text-gray-400 text-sm">เปลี่ยนสถานภาพเป็นมหาวิทยาลัยในกำกับของรัฐ เพื่อเพิ่มความยืดหยุ่นและการพัฒนาศักยภาพทางการศึกษาระดับสากล</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- University Color Section -->
+    <section id="color" class="py-20 bg-neutral-900/50 border-y border-orange-500/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Color Display Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 p-8 sm:p-12 rounded-3xl text-white shadow-2xl orange-card-glow overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 opacity-20 text-9xl font-black select-none">
+                            สีแสด
+                        </div>
+                        <span class="text-xs uppercase font-bold tracking-widest bg-black/20 px-3 py-1 rounded-full text-white inline-block mb-4">University Color</span>
+                        <h3 class="text-4xl font-extrabold mb-2">สีแสด (สีส้ม)</h3>
+                        <p class="text-white/90 text-sm mb-6">สีประจำสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
+                        <div class="flex items-center space-x-3 text-xs bg-black/30 backdrop-blur-md p-3 rounded-xl border border-white/10">
+                            <span class="w-4 h-4 rounded-full bg-[#ff6b00] border border-white"></span>
+                            <span class="font-mono">COLOR CODE: #FF6B00 / ORANGE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Explanation Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-orange-400 text-sm font-semibold">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>ความหมายและความเป็นมา</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white">คำพูดมากมาย ความหมายสีแสด</h3>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        สื่อถึงสีประจำพระองค์ของ <span class="text-orange-400 font-semibold">รัชกาลที่ 4 พระบาทสมเด็จพระจอมเกล้าเจ้าอยู่หัว</span> ซึ่งเสด็จพระราชสมภพในวันพฤหัสบดี โดยสีประจำวันตามตำราไทยคือ <span class="text-orange-400 font-semibold">"สีแสด" (หรือสีส้ม)</span>
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        ทางกลุ่มมหาวิทยาลัยพระจอมเกล้าจึงได้อัญเชิญสีประจำพระองค์นี้มาเป็นสีประจำสถาบัน เพื่อเป็นการเทิดพระเกียรติและนึกถึงพระมหากรุณาธิคุณของพระองค์ผู้ทรงเป็นที่มาของนามพระราชทาน <span class="text-white font-medium">"พระจอมเกล้า"</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy & Core Values Section -->
+    <section id="philosophy" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-orange-500 tracking-widest uppercase mb-2">ABOUT US</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">ปรัชญา และ ค่านิยมองค์กร</h3>
+                <p class="text-gray-400 mt-3 max-w-2xl mx-auto">หลักยึดเหนี่ยวจิตใจและทิศทางการเติบโตของชาว สจล.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Philosophy Card -->
+                <div class="bg-neutral-900 border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500/50 transition-all duration-300 shadow-xl relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-orange-500/10 rounded-full blur-xl group-hover:bg-orange-500/20 transition-all"></div>
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center text-orange-400 text-2xl mb-6">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">ปรัชญาการศึกษา สจล.</h4>
+                    <p class="text-orange-400 font-medium text-xl leading-relaxed italic">
+                        "การศึกษา วิจัย ด้านวิทยาศาสตร์และเทคโนโลยี เป็นรากฐานของการพัฒนาประเทศ"
+                    </p>
+                </div>
+
+                <!-- FIGHT Intro Card -->
+                <div class="bg-neutral-900 border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500/50 transition-all duration-300 shadow-xl relative overflow-hidden group">
+                    <div class="absolute -right-6 -top-6 w-24 h-24 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">ค่านิยมใหม่ "FIGHT"</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        ไม่ได้มีความหมายเพียงแค่ <span class="text-orange-400 font-bold">"สู้"</span> ในภาษาอังกฤษ แต่เป็นการหลอมรวม <span class="text-white">ทัศนคติ ความคิด พฤติกรรม และเป้าหมาย</span> ของบุคลากร สจล. ในทิศทางเดียวกัน สร้างเป็นวัฒนธรรมองค์กรที่เป็นรากแก้วเติบโตอย่างมั่นคง
+                    </p>
+                </div>
+            </div>
+
+            <!-- FIGHT Letter Cards Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-neutral-900/60 border border-neutral-800 p-5 rounded-xl text-center hover:border-orange-500/50 transition-all">
+                    <span class="text-4xl font-extrabold text-orange-500 block mb-2">F</span>
+                    <span class="text-gray-200 font-medium text-sm">Futuristic</span>
+                    <p class="text-gray-500 text-xs mt-1">มุ่งสู่อนาคต</p>
+                </div>
+                <div class="bg-neutral-900/60 border border-neutral-800 p-5 rounded-xl text-center hover:border-orange-500/50 transition-all">
+                    <span class="text-4xl font-extrabold text-orange-500 block mb-2">I</span>
+                    <span class="text-gray-200 font-medium text-sm">Integrity</span>
+                    <p class="text-gray-500 text-xs mt-1">ซื่อสัตย์สุจริต</p>
+                </div>
+                <div class="bg-neutral-900/60 border border-neutral-800 p-5 rounded-xl text-center hover:border-orange-500/50 transition-all">
+                    <span class="text-4xl font-extrabold text-orange-500 block mb-2">G</span>
+                    <span class="text-gray-200 font-medium text-sm">Global</span>
+                    <p class="text-gray-500 text-xs mt-1">ก้าวไกลระดับโลก</p>
+                </div>
+                <div class="bg-neutral-900/60 border border-neutral-800 p-5 rounded-xl text-center hover:border-orange-500/50 transition-all">
+                    <span class="text-4xl font-extrabold text-orange-500 block mb-2">H</span>
+                    <span class="text-gray-200 font-medium text-sm">Harmony</span>
+                    <p class="text-gray-500 text-xs mt-1">กลมกลืนสามัคคี</p>
+                </div>
+                <div class="bg-neutral-900/60 border border-neutral-800 p-5 rounded-xl text-center hover:border-orange-500/50 transition-all col-span-2 sm:col-span-1">
+                    <span class="text-4xl font-extrabold text-orange-500 block mb-2">T</span>
+                    <span class="text-gray-200 font-medium text-sm">Technology</span>
+                    <p class="text-gray-500 text-xs mt-1">ผู้นำเทคโนโลยี</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculties Section -->
+    <section id="faculties" class="py-20 bg-neutral-900/40 border-t border-orange-500/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-orange-500 tracking-widest uppercase mb-2">ACADEMICS</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">รายชื่อคณะและวิทยาลัยใน สจล.</h3>
+                <p class="text-gray-400 mt-3 max-w-2xl mx-auto">ศูนย์รวมแห่งองค์ความรู้ วิชาการ และนวัตกรรมหลากหลายสาขา</p>
+            </div>
+
+            <!-- Faculties Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="faculty-grid">
+                <!-- Faculty cards generated dynamically or rendered directly -->
+                
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-gear text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะวิศวกรรมศาสตร์</h4>
+                        <p class="text-gray-400 text-sm mt-1">มุ่งเน้นการสร้างวิศวกรและเทคโนโลยีระดับสากล</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-compass-drafting text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะสถาปัตยกรรม ศิลปะและการออกแบบ</h4>
+                        <p class="text-gray-400 text-sm mt-1">สรรค์สร้างงานออกแบบ สถาปัตยกรรม และศิลปะ</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</h4>
+                        <p class="text-gray-400 text-sm mt-1">ผลิตครูช่าง นักวิชาการ และผู้เชี่ยวชาญเทคโนโลยี</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-wheat-awn text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะเทคโนโลยีการเกษตร</h4>
+                        <p class="text-gray-400 text-sm mt-1">พัฒนานวัตกรรมและนวัตกรรมการเกษตรสมัยใหม่</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-flask text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะวิทยาศาสตร์</h4>
+                        <p class="text-gray-400 text-sm mt-1">สร้างองค์ความรู้พื้นฐานและงานวิจัยประยุกต์</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-laptop-code text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะเทคโนโลยีสารสนเทศ</h4>
+                        <p class="text-gray-400 text-sm mt-1">ผู้นำด้านไอที ซอฟต์แวร์ และไซเบอร์</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-utensils text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะอุตสาหกรรมอาหาร</h4>
+                        <p class="text-gray-400 text-sm mt-1">วิจัยและพัฒนาเทคโนโลยีอาหารเพื่ออนาคต</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะบริหารธุรกิจ</h4>
+                        <p class="text-gray-400 text-sm mt-1">สร้างผู้นำทางธุรกิจและผู้ประกอบการรุ่นใหม่</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-language text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะศิลปศาสตร์</h4>
+                        <p class="text-gray-400 text-sm mt-1">ส่งเสริมภาษา ทักษะมนุษยศาสตร์ และการสื่อสาร</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-user-doctor text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะแพทยศาสตร์</h4>
+                        <p class="text-gray-400 text-sm mt-1">ผลิตแพทย์วิจัยและนวัตกรรมการแพทย์ยุคใหม่</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-tooth text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะทันตแพทยศาสตร์</h4>
+                        <p class="text-gray-400 text-sm mt-1">สร้างทันตแพทย์เฉพาะทางและนวัตกรรมทำฟัน</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-user-nurse text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะพยาบาลศาสตร์</h4>
+                        <p class="text-gray-400 text-sm mt-1">การพยาบาลและการดูแลสุขภาพตามสากล</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-microchip text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">คณะเทคโนโลยีนวัตกรรมบูรณาการ</h4>
+                        <p class="text-gray-400 text-sm mt-1">การบูรณาการเทคโนโลยีและนวัตกรรมข้ามสายงาน</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-plane-departure text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">วิทยาลัยอุตสาหกรรมการบินนานาชาติ</h4>
+                        <p class="text-gray-400 text-sm mt-1">การจัดการการบินและวิศวกรรมการบินระดับสากล</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-music text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">วิทยาลัยวิศวกรรมสังคีต</h4>
+                        <p class="text-gray-400 text-sm mt-1">การผลิตดนตรี วิศวกรรมเสียง และเทคโนโลยีเสียง</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-building-columns text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">สถาบันโคเซ็นแห่ง สจล. (KOSEN-KMITL)</h4>
+                        <p class="text-gray-400 text-sm mt-1">หลักสูตรวิศวกรรมศาสตร์มาตรฐานโคเซ็น ประเทศญี่ปุ่น</p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 transition-all duration-300 flex items-start space-x-4 group sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all flex-shrink-0">
+                        <i class="fa-solid fa-location-dot text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-white group-hover:text-orange-400 transition-colors">วิทยาเขตชุมพรเขตอุดมศักดิ์ จ.ชุมพร</h4>
+                        <p class="text-gray-400 text-sm mt-1">ศูนย์การเรียนรู้ขยายโอกาสภาคใต้ของ สจล.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Transportation Section -->
+    <section id="transport" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-orange-500 tracking-widest uppercase mb-2">LOCATION & TRAVEL</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">การเดินทางมายัง สจล.</h3>
+                <p class="text-gray-400 mt-3 max-w-2xl mx-auto">สะดวกสบายด้วยช่องทางการเดินทางที่หลากหลาย ทั้งทางรถไฟและทางหลวง</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Train Travel -->
+                <div class="bg-neutral-900 border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500/50 transition-all shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center text-orange-400 text-3xl mb-6">
+                            <i class="fa-solid fa-train"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">เดินทางโดยรถไฟ</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            สามารถเดินทางไปที่ <span class="text-orange-400 font-semibold">สถานีกรุงเทพ (หัวลำโพง)</span> หรือสถานีกลางกรุงเทพอภิวัฒน์ แล้วขึ้นรถไฟสายตะวันออก ลงที่ <span class="text-white font-medium underline decoration-orange-500">"สถานีมหาวิทยาลัยพระจอมเกล้าเจ้าคุณทหารลาดกระบัง"</span> ซึ่งตั้งอยู่ใจกลางสถาบัน
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-neutral-800 text-sm text-gray-400 flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-check text-orange-500"></i>
+                        <span>สถานีรถไฟจอดเทียบตรงในสถาบันสะดวกสบาย</span>
+                    </div>
+                </div>
+
+                <!-- Personal Car Travel -->
+                <div class="bg-neutral-900 border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500/50 transition-all shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-3xl mb-6">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4">เดินทางโดยรถส่วนตัว</h4>
+                        <p class="text-gray-300 leading-relaxed">
+                            หากเดินทางด้วยรถยนต์ส่วนตัว สามารถใช้เส้นทาง <span class="text-orange-400 font-semibold">ทางหลวงพิเศษหมายเลข 7 (มอเตอร์เวย์ กรุงเทพ - ชลบุรี)</span> แล้วเลี้ยวซ้ายเข้าสู่อ่อนนุช-ลาดกระบัง เพื่อเดินทางเข้าสู่สถาบัน
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-neutral-800 text-sm text-gray-400 flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-check text-orange-500"></i>
+                        <span>เชื่อมต่อทางด่วน มอเตอร์เวย์ และสนามบินสุวรรณภูมิ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section id="team" class="py-20 bg-neutral-900/60 border-t border-orange-500/10 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-orange-500 tracking-widest uppercase mb-2">PRESENTATION TEAM</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">รายชื่อสมาชิกผู้จัดทำ</h3>
+                <p class="text-gray-400 mt-3">นักเรียนชั้นมัธยมศึกษาปีที่ 5/8</p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                
+                <!-- Member 1 -->
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 text-center transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-orange-600 to-amber-400 mx-auto flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-105 transition-transform">
+                        10
+                    </div>
+                    <h4 class="font-bold text-white group-hover:text-orange-400 transition-colors">นายภัทรพัฒน์ หลีกภัย</h4>
+                    <p class="text-orange-400 text-sm font-medium mt-1">ม.5/8 เลขที่ 10</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 text-center transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-orange-600 to-amber-400 mx-auto flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-105 transition-transform">
+                        15
+                    </div>
+                    <h4 class="font-bold text-white group-hover:text-orange-400 transition-colors">นายชานนท์ ไม้จันทร์</h4>
+                    <p class="text-orange-400 text-sm font-medium mt-1">ม.5/8 เลขที่ 15</p>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 text-center transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-orange-600 to-amber-400 mx-auto flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-105 transition-transform">
+                        17
+                    </div>
+                    <h4 class="font-bold text-white group-hover:text-orange-400 transition-colors">นายวชิรวิทย์ บุญประเทือง</h4>
+                    <p class="text-orange-400 text-sm font-medium mt-1">ม.5/8 เลขที่ 17</p>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 text-center transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-orange-600 to-amber-400 mx-auto flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-105 transition-transform">
+                        18
+                    </div>
+                    <h4 class="font-bold text-white group-hover:text-orange-400 transition-colors">นายอธินันท์ ถนอมทรัพย์</h4>
+                    <p class="text-orange-400 text-sm font-medium mt-1">ม.5/8 เลขที่ 18</p>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 rounded-2xl p-6 text-center transition-all duration-300 group hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-orange-600 to-amber-400 mx-auto flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-orange-500/20 mb-4 group-hover:scale-105 transition-transform">
+                        21
+                    </div>
+                    <h4 class="font-bold text-white group-hover:text-orange-400 transition-colors">นายจิรพัส รุ่งทิวาพรชัย</h4>
+                    <p class="text-orange-400 text-sm font-medium mt-1">ม.5/8 เลขที่ 21</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-[#0a0a09] border-t border-neutral-800 text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (สจล.) - King Mongkut's Institute of Technology Ladkrabang</p>
+            <p class="mt-2 text-xs text-gray-600">ออกแบบสำหรับรายงานการนำเสนอข้อมูลมหาวิทยาลัย</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
